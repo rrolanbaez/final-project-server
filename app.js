@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 // var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
+var carsRouter = require('./routes/cars'); 
 
 var app = express();
 
@@ -30,6 +31,7 @@ app.use(
 // app.use('/', indexRouter);  --> We never use this because everything can match the index router
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
+app.use('/cars', carsRouter);
 
 mongoose
     .connect(process.env.MONGODB_URI)

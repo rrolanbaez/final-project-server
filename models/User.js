@@ -1,5 +1,3 @@
-// COSTIMICE FOR MY PROJECT
-
 const { model, Schema } = require("mongoose");
 
 const userSchema = new Schema(
@@ -24,3 +22,5 @@ const userSchema = new Schema(
 );
 
 module.exports = model("User", userSchema);
+
+// Maybe add a role (client or host) or profile img ??
