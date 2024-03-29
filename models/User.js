@@ -15,6 +15,11 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    role: {
+      type: String,
+      enum: ['host', 'client'],   //not sure
+      required: true,
+    }
   },
   {
     timestamps: true,
