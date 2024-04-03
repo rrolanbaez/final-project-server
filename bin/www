@@ -26,6 +26,7 @@ var server = http.createServer(app);
  */
 
 server.listen(port, (err) => {
+  console.clear()
   if (err) console.log("Error in server setup", err)
   console.log("Server listening on Port", port);
 });
