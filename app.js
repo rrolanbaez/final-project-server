@@ -9,7 +9,8 @@ var usersRouter = require('./routes/users');
 var authRouter = require('./routes/auth');
 var carsRouter = require('./routes/cars');
 var reservationsRouter = require('./routes/reservations'); 
-var photosRouter = require('./routes/photos')
+var photosRouter = require('./routes/photos');
+var favoritesRouter = require('./routes/favorites');
 
 var app = express();
 
@@ -35,11 +36,12 @@ app.use('/reservations', reservationsRouter);
 app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/cars', carsRouter);
-app.use('/photos', photosRouter)
+app.use('/photos', photosRouter);
+app.use('/favorites', favoritesRouter);   // When I add this it crashessss 
 
 mongoose
     .connect(process.env.MONGODB_URI)
-    .then((x) => console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`))
+    .then((x) => console.log(`Connected to Mongo! 💚 Database name: "${x.connections[0].name}"`))
     .catch((err) => console.error("Error connecting to mongo", err));
 
 module.exports = app;

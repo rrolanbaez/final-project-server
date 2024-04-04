@@ -15,14 +15,16 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {type: String, default: "https://www.iconpacks.net/icons/2/free-user-icon-3297-thumb.png"},
+    image: {
+      type: String, 
+      default: "https://www.iconpacks.net/icons/2/free-user-icon-3297-thumb.png"
+    },
     role: {
       type: String,
-      enum: ['host', 'client'],   //not sure
+      enum: ['host', 'client'],   
       required: true,
-    }
-
-    // maybe I need to add profile pic here
+    },
+    favoriteCars: [{ type: Schema.Types.ObjectId, ref: "Car"}],
   },
   {
     timestamps: true,
@@ -30,5 +32,3 @@ const userSchema = new Schema(
 );
 
 module.exports = model("User", userSchema);
-
-// Maybe add a role (client or host) or profile img ??

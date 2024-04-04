@@ -47,7 +47,7 @@ router.post("/", isAuthenticated, (req, res, next) => {
 router.get("/", (req, res, next) => {
   Car.find()
     .then((foundCars) => {
-      console.log("Found Cars ===>", foundCars);
+      // console.log("Found Cars ===>", foundCars);
       res.json(foundCars);
     })
     .catch((err) => {
